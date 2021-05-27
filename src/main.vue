@@ -2,13 +2,13 @@
     <main class="is-flex is-flex-direction-column">
         <section class="hero is-medium is-info">
             <div class="hero-body">
-                <h1 class="title">{{ title }}</h1>
+                <h1 class="title is-size-1 is-size-3-mobile">{{ title }}</h1>
             </div>
         </section>
         <section class="content container">
             <BTabs v-model="activeTab" type="is-boxed">
-                <BTabItem v-for="(page, name) in pages" :key="name" :label="name">
-                    <component :is="page" />
+                <BTabItem v-for="(page, index) in pages" :key="index" :label="page.name">
+                    <component :is="page.content" />
                 </BTabItem>
             </BTabs>
         </section>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import * as pages from "./pages";
+import pages from "./pages";
 
 export default {
     name: "Main",
@@ -33,7 +33,6 @@ export default {
 <style scoped lang="scss">
     h1 {
         font-family: 'Parisienne', cursive;
-        font-size: 90px;
     }
     main {
         min-height: 100vh;

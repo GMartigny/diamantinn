@@ -1,7 +1,13 @@
 import Home from "./home.vue";
 import Contact from "./contact.vue";
 
-export {
-    Home,
-    Contact,
-};
+export default [
+    {
+        name: "Accueil",
+        content: Home,
+    },
+    {
+        name: "Contact",
+        content: Contact,
+    },
+];
