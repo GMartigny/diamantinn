@@ -17,7 +17,7 @@ export default {
                 ],
             },
             {
-                test: /\.(png|ttf|eot|woff2?)$/,
+                test: /\.(png|svg|ttf|eot|woff2?)$/,
                 type: "asset/resource",
             }
         ],
