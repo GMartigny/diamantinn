@@ -36,6 +36,9 @@
     & nav {
         @apply bg-gray-950/75;
 
+        & img {
+            @apply h-6;
+        }
         & a {
             @apply py-1;
         }
@@ -47,10 +50,10 @@
 }
 
 section {
-    @apply p-4 container mx-auto min-h-[50vh];
+    @apply p-4 container mx-auto min-h-[60vh];
 
     & .title {
-        @apply vibes text-4xl;
+        @apply vibes text-4xl pt-10 -mt-10;
     }
 }
 

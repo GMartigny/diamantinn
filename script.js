@@ -82,7 +82,7 @@ document.querySelectorAll(".anchor")
         const a = document.createElement("a");
         a.href = `#${anchor.id}`;
         a.textContent = anchor.textContent;
-        a.className = "p-4 transition-all hover:underline hover:bg-gray-950";
+        a.className = "p-8 transition-all hover:underline hover:bg-gray-950";
         li.appendChild(a);
         nav.appendChild(li);
     });
