@@ -5,7 +5,14 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener("load", async () => {
-    // await wait(1000);
+    if (location.hash.length) {
+        requestAnimationFrame(() => {
+            const anchor = document.querySelector(location.hash);
+            anchor.scrollIntoView({
+                behavior: "smooth",
+            });
+        });
+    }
     document.body.classList.add("loaded");
 })
 
@@ -75,12 +82,13 @@ document.querySelectorAll(".anchor")
         anchor.id = anchor.textContent
             .toLowerCase()
             .normalize("NFD")
-            .replace(/ /g, "_")
+            .replace(/[ -]/g, "_")
             .replace(/\W/g, "");
         const li = document.createElement("li");
         li.className = "flex grow";
         const a = document.createElement("a");
         a.addEventListener("click", () => {
+            history.replaceState({}, "", `#${anchor.id}`);
            anchor.scrollIntoView({
                behavior: "smooth",
            });

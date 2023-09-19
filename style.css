@@ -19,14 +19,14 @@
     @apply h-0 transition-height lg:h-auto lg:transition-none overflow-hidden;
 }
 nav:has(input:checked) {
-    @apply bg-gray-950;
+    @apply max-md:bg-gray-950;
 
     & .burger:after {
         content: "\e5cd";
     }
 
     & #nav {
-        @apply h-[40vh];
+        @apply max-md:h-[40vh];
     }
 }
 
@@ -42,7 +42,7 @@ nav:has(input:checked) {
 }
 
 #name {
-    opacity: 0;
+    @apply opacity-0;
 }
 .loaded {
     & #name {
@@ -65,10 +65,10 @@ nav:has(input:checked) {
 }
 
 section {
-    @apply my-8 container mx-auto min-h-[60vh];
+    @apply p-4 container mx-auto min-h-[60vh];
 
     .title {
-        @apply vibes text-4xl pt-12 -mt-12;
+        @apply vibes text-4xl pt-14 -mt-14;
     }
 }
 
@@ -85,46 +85,67 @@ section {
             @apply absolute w-full h-full left-0 top-0 transition-transform;
         }
 
-        &:hover {
-            @apply z-10;
-            transition: transform ease .2s;
+        @media (hover: hover) {
+            &:hover {
+                @apply z-10 transition-transform;
 
-            & img {
-                @apply scale-110;
+                & img {
+                    @apply scale-110;
+                }
             }
         }
 
         &:nth-child(1) {
-            transform: translate(0, 0) scale(.333);
+            transform: translate(0, 0) scale(.5);
         }
         &:nth-child(2) {
-            transform: translate(33.3%, 0) scale(.333);
+            transform: translate(50%, 0) scale(.5);
         }
         &:nth-child(3) {
-            transform: translate(66.7%, 0) scale(.333);
+            transform: translate(0, 50%) scale(.5);
         }
         &:nth-child(4) {
-            transform: translate(0, 33.3%) scale(.333);
+            transform: translate(50%, 50%) scale(.5);
         }
-        &:nth-child(5) {
-            transform: translate(33.3%, 33.3%) scale(.333);
+        &:nth-child(n + 5) {
+            @apply hidden;
         }
-        &:nth-child(6) {
-            transform: translate(66.7%, 33.3%) scale(.333);
-        }
-        &:nth-child(7) {
-            transform: translate(0, 66.7%) scale(.333);
-        }
-        &:nth-child(8) {
-            transform: translate(33.3%, 66.7%) scale(.333);
-        }
-        &:nth-child(9) {
-            transform: translate(66.7%, 66.7%) scale(.333);
+        @media (min-width: 640px) {
+            &:nth-child(n + 5) {
+                @apply block;
+            }
+
+            &:nth-child(1) {
+                transform: translate(0, 0) scale(.333);
+            }
+            &:nth-child(2) {
+                transform: translate(33.3%, 0) scale(.333);
+            }
+            &:nth-child(3) {
+                transform: translate(66.7%, 0) scale(.333);
+            }
+            &:nth-child(4) {
+                transform: translate(0, 33.3%) scale(.333);
+            }
+            &:nth-child(5) {
+                transform: translate(33.3%, 33.3%) scale(.333);
+            }
+            &:nth-child(6) {
+                transform: translate(66.7%, 33.3%) scale(.333);
+            }
+            &:nth-child(7) {
+                transform: translate(0, 66.7%) scale(.333);
+            }
+            &:nth-child(8) {
+                transform: translate(33.3%, 66.7%) scale(.333);
+            }
+            &:nth-child(9) {
+                transform: translate(66.7%, 66.7%) scale(.333);
+            }
         }
     }
     & label:has(input:checked) {
-        @apply z-10 transform-none;
-        transition: transform ease .2s;
+        @apply z-10 transform-none transition-transform;
 
         & img {
             @apply transform-none;
@@ -133,5 +154,5 @@ section {
 }
 
 .call-to-action {
-    @apply bg-gray-950 sawed flex gap-2 outline-gray-950 text-white p-2 px-6 transition-transform hover:-translate-y-0.5 active:translate-y-0;
+    @apply bg-gray-950 sawed m-2 flex gap-1 md:gap-2 outline-gray-950 text-white p-2 px-2 md:px-6 transition-transform hover:-translate-y-0.5 active:translate-y-0;
 }
