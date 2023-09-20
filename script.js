@@ -14,7 +14,7 @@ window.addEventListener("load", async () => {
         });
     }
     document.body.classList.add("loaded");
-})
+});
 
 const splashPics = [
     "pool",
@@ -85,7 +85,7 @@ document.querySelectorAll(".anchor")
             .replace(/[ -]/g, "_")
             .replace(/\W/g, "");
         const li = document.createElement("li");
-        li.className = "flex grow";
+        li.className = "flex grow hover:bg-gray-950";
         const a = document.createElement("a");
         a.addEventListener("click", () => {
             history.replaceState({}, "", `#${anchor.id}`);
@@ -94,7 +94,7 @@ document.querySelectorAll(".anchor")
            });
         });
         a.textContent = anchor.textContent;
-        a.className = "p-4 cursor-pointer text-end self-center lg:text-center flex-1 lg:p-8 transition-all hover:underline hover:bg-gray-950";
+        a.className = "p-4 cursor-pointer text-end self-center lg:text-center flex-1 lg:p-8 transition-padding hover:underline";
         li.appendChild(a);
         nav.appendChild(li);
     });

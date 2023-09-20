@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
 
 .vibes {
@@ -15,48 +14,27 @@
 .burger:after {
     content: "\e5d2";
 }
-#nav {
-    @apply h-0 transition-height lg:h-auto lg:transition-none overflow-hidden;
+nav:has(input:checked) .burger:after {
+    content: "\e5cd";
 }
-nav:has(input:checked) {
-    @apply max-md:bg-gray-950;
 
-    & .burger:after {
-        content: "\e5cd";
-    }
+body {
+    overflow: hidden;
 
-    & #nav {
-        @apply max-md:h-[40vh];
+    &.loaded {
+        overflow-y: auto;
     }
 }
 
-@keyframes appear {
-    from {
-        opacity: 0;
-        letter-spacing: 20px;
-    }
-    to {
-        opacity: 1;
-        letter-spacing: 8px;
-    }
+.loaded #name {
+    @apply animate-appear;
 }
 
-#name {
-    @apply opacity-0;
-}
-.loaded {
-    & #name {
-        animation: appear 1 forwards 1s;
-    }
-}
+.scrolled nav {
+    @apply bg-gray-950/75;
 
-.scrolled {
-    & nav {
-        @apply bg-gray-950/75;
-
-        & a {
-            @apply lg:py-2;
-        }
+    & a {
+        @apply lg:py-2;
     }
 }
 
@@ -72,83 +50,61 @@ section {
     }
 }
 
-.pics {
-    @apply aspect-video m-auto;
-    max-height: 80vh;
+.pics label {
+    @apply absolute w-full h-full left-0 top-0 cursor-pointer will-change-transform z-0 hover:z-10 hover:transition-transform max-sm:[&:nth-child(n+5)]:hidden origin-top-left;
+    transition: transform ease .2s, z-index 0s .2s;
 
-    & label {
-        @apply absolute w-full h-full left-0 top-0 cursor-pointer will-change-transform z-0;
-        transition: transform ease .2s, z-index 0s .2s;
-        transform-origin: 0 0;
-
-        & img {
-            @apply absolute w-full h-full left-0 top-0 transition-transform;
-        }
-
-        @media (hover: hover) {
-            &:hover {
-                @apply z-10 transition-transform;
-
-                & img {
-                    @apply scale-110;
-                }
-            }
-        }
-
-        &:nth-child(1) {
-            transform: translate(0, 0) scale(.5);
-        }
-        &:nth-child(2) {
-            transform: translate(50%, 0) scale(.5);
-        }
-        &:nth-child(3) {
-            transform: translate(0, 50%) scale(.5);
-        }
-        &:nth-child(4) {
-            transform: translate(50%, 50%) scale(.5);
-        }
-        &:nth-child(n + 5) {
-            @apply hidden;
-        }
-        @media (min-width: 640px) {
-            &:nth-child(n + 5) {
-                @apply block;
-            }
-
-            &:nth-child(1) {
-                transform: translate(0, 0) scale(.333);
-            }
-            &:nth-child(2) {
-                transform: translate(33.3%, 0) scale(.333);
-            }
-            &:nth-child(3) {
-                transform: translate(66.7%, 0) scale(.333);
-            }
-            &:nth-child(4) {
-                transform: translate(0, 33.3%) scale(.333);
-            }
-            &:nth-child(5) {
-                transform: translate(33.3%, 33.3%) scale(.333);
-            }
-            &:nth-child(6) {
-                transform: translate(66.7%, 33.3%) scale(.333);
-            }
-            &:nth-child(7) {
-                transform: translate(0, 66.7%) scale(.333);
-            }
-            &:nth-child(8) {
-                transform: translate(33.3%, 66.7%) scale(.333);
-            }
-            &:nth-child(9) {
-                transform: translate(66.7%, 66.7%) scale(.333);
-            }
-        }
-    }
-    & label:has(input:checked) {
+    &:has(input:checked) {
         @apply z-10 transform-none transition-transform;
 
         & img {
             @apply transform-none;
+        }
+    }
+
+    & img {
+        @apply absolute w-full h-full left-0 top-0 transition-transform [@media(any-hover:hover){&:hover}]:scale-110;
+    }
+
+    &:nth-child(1) {
+        transform: translate(0, 0) scale(.5);
+    }
+    &:nth-child(2) {
+        transform: translate(50%, 0) scale(.5);
+    }
+    &:nth-child(3) {
+        transform: translate(0, 50%) scale(.5);
+    }
+    &:nth-child(4) {
+        transform: translate(50%, 50%) scale(.5);
+    }
+    @media (min-width: 640px) {
+        &:nth-child(1) {
+            transform: translate(0, 0) scale(.333);
+        }
+        &:nth-child(2) {
+            transform: translate(33.3%, 0) scale(.333);
+        }
+        &:nth-child(3) {
+            transform: translate(66.7%, 0) scale(.333);
+        }
+        &:nth-child(4) {
+            transform: translate(0, 33.3%) scale(.333);
+        }
+        &:nth-child(5) {
+            transform: translate(33.3%, 33.3%) scale(.333);
+        }
+        &:nth-child(6) {
+            transform: translate(66.7%, 33.3%) scale(.333);
+        }
+        &:nth-child(7) {
+            transform: translate(0, 66.7%) scale(.333);
+        }
+        &:nth-child(8) {
+            transform: translate(33.3%, 66.7%) scale(.333);
+        }
+        &:nth-child(9) {
+            transform: translate(66.7%, 66.7%) scale(.333);
         }
     }
 }
