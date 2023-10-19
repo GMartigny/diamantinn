@@ -9,6 +9,9 @@ export default {
       animation: {
         appear: "appear 1 forwards 1s"
       },
+      backgroundImage: {
+        divider: "url(./media/divider.svg)",
+      },
       keyframes: {
         appear: {
           from: {

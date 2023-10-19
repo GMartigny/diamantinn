@@ -43,10 +43,23 @@ body {
 }
 
 section {
-    @apply p-4 container mx-auto min-h-[60vh];
+    @apply p-4 container mx-auto;
+
+    &:not(&:last-of-type) {
+        @apply min-h-[60vh];
+    }
+
+    &:after {
+        content: "";
+        @apply block h-4 bg-divider bg-center bg-no-repeat mt-8;
+    }
 
     .title {
-        @apply vibes text-4xl pt-14 -mt-14;
+        @apply vibes text-4xl;
+
+        &.anchor {
+            @apply pt-14 -mt-14;
+        }
     }
 }
 
@@ -55,15 +68,23 @@ section {
     transition: transform ease .2s, z-index 0s .2s;
 
     &:has(input:checked) {
-        @apply z-10 transform-none transition-transform;
+        @apply z-10 transform-none transition-transform overflow-hidden;
 
         & img {
             @apply transform-none;
+        }
+
+        & p {
+            @apply opacity-100 duration-500 delay-200;
         }
     }
 
     & img {
         @apply absolute w-full h-full left-0 top-0 transition-transform [@media(any-hover:hover){&:hover}]:scale-110;
+    }
+
+    & p {
+        @apply absolute w-full bottom-8 opacity-0 transition-opacity text-center text-white p-4 bg-gray-950/75 outline-gray-950/75 sawed;
     }
 
     &:nth-child(1) {
@@ -86,7 +107,7 @@ section {
             transform: translate(33.3%, 0) scale(.333);
         }
         &:nth-child(3) {
-            transform: translate(66.7%, 0) scale(.333);
+            transform: translate(66.6%, 0) scale(.333);
         }
         &:nth-child(4) {
             transform: translate(0, 33.3%) scale(.333);
@@ -95,16 +116,16 @@ section {
             transform: translate(33.3%, 33.3%) scale(.333);
         }
         &:nth-child(6) {
-            transform: translate(66.7%, 33.3%) scale(.333);
+            transform: translate(66.6%, 33.3%) scale(.333);
         }
         &:nth-child(7) {
-            transform: translate(0, 66.7%) scale(.333);
+            transform: translate(0, 66.6%) scale(.333);
         }
         &:nth-child(8) {
-            transform: translate(33.3%, 66.7%) scale(.333);
+            transform: translate(33.3%, 66.6%) scale(.333);
         }
         &:nth-child(9) {
-            transform: translate(66.7%, 66.7%) scale(.333);
+            transform: translate(66.6%, 66.6%) scale(.333);
         }
     }
 }
