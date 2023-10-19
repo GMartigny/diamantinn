@@ -2,6 +2,9 @@ export default {
   content: ["index.html", "script.js"],
   theme: {
     extend: {
+      colors: {
+        primary: "#095665"
+      },
       transitionProperty: {
         "height": "height",
         "padding": "padding",

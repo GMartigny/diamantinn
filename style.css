@@ -31,7 +31,7 @@ body {
 }
 
 .scrolled nav {
-    @apply bg-gray-950/75;
+    @apply bg-primary/75;
 
     & a {
         @apply lg:py-2;
@@ -63,12 +63,73 @@ section {
     }
 }
 
+:root {
+    --offset: 20px;
+
+    @media (min-width: 640px) {
+        --offset: 30px;
+    }
+    @media (min-width: 768px) {
+        --offset: 50px;
+    }
+}
+
+.pics {
+    margin: 0 var(--offset);
+}
+
+.pics:has(.close input:checked) label {
+    &:nth-child(1) {
+        transform: scale(.5) translate(-50%, -50%);
+    }
+    &:nth-child(2) {
+        transform: scale(.5) translate(50%, -50%);
+    }
+    &:nth-child(3) {
+        transform: scale(.5) translate(-50%, 50%);
+    }
+    &:nth-child(4) {
+        transform: scale(.5) translate(50%, 50%);
+    }
+    @media (min-width: 640px) {
+        &:nth-child(1) {
+            transform: scale(.333) translate(-100%, -100%);
+        }
+        &:nth-child(2) {
+            transform: scale(.333) translate(0, -100%);
+        }
+        &:nth-child(3) {
+            transform: scale(.333) translate(100%, -100%);
+        }
+        &:nth-child(4) {
+            transform: scale(.333) translate(-100%, 0);
+        }
+        &:nth-child(5) {
+            transform: scale(.333) translate(0, 0);
+        }
+        &:nth-child(6) {
+            transform: scale(.333) translate(100%, 0);
+        }
+        &:nth-child(7) {
+            transform: scale(.333) translate(-100%, 100%);
+        }
+        &:nth-child(8) {
+            transform: scale(.333) translate(0, 100%);
+        }
+        &:nth-child(9) {
+            transform: scale(.333) translate(100%, 100%);
+        }
+    }
+}
+
 .pics label {
-    @apply absolute w-full h-full left-0 top-0 cursor-pointer will-change-transform z-0 hover:z-10 hover:transition-transform max-sm:[&:nth-child(n+5)]:hidden origin-top-left;
-    transition: transform ease .2s, z-index 0s .2s;
+    @apply absolute w-full h-full left-0 top-0 cursor-pointer will-change-transform transition-transform duration-300 motion-reduce:duration-0 z-0 hover:z-10 hover:transition-transform max-sm:[&:nth-child(n+5):not(.close)]:hidden origin-top-left;
+    transform: scale(.5) translate(calc(-50% - var(--offset) * 2), 0);
+    transition: transform ease .3s, z-index linear 0s .2s;
+    transform-origin: center;
 
     &:has(input:checked) {
-        @apply z-10 transform-none transition-transform overflow-hidden;
+        @apply z-20 transform-none overflow-hidden;
 
         & img {
             @apply transform-none;
@@ -77,6 +138,14 @@ section {
         & p {
             @apply opacity-100 duration-500 delay-200;
         }
+
+        & ~ label {
+            transform: scale(.5) translate(50%, 0);
+        }
+
+        & + label {
+            transform: scale(.5) translate(calc(50% + var(--offset) * 2), 0);
+        }
     }
 
     & img {
@@ -84,52 +153,27 @@ section {
     }
 
     & p {
-        @apply absolute w-full bottom-8 opacity-0 transition-opacity text-center text-white p-4 bg-gray-950/75 outline-gray-950/75 sawed;
+        @apply absolute w-full bottom-8 opacity-0 transition-opacity text-center text-white p-4 bg-primary/75 outline-primary/75 sawed;
     }
 
-    &:nth-child(1) {
-        transform: translate(0, 0) scale(.5);
-    }
-    &:nth-child(2) {
-        transform: translate(50%, 0) scale(.5);
-    }
-    &:nth-child(3) {
-        transform: translate(0, 50%) scale(.5);
-    }
-    &:nth-child(4) {
-        transform: translate(50%, 50%) scale(.5);
-    }
-    @media (min-width: 640px) {
-        &:nth-child(1) {
-            transform: translate(0, 0) scale(.333);
+    &.close {
+        @apply z-40;
+        transform: none !important;
+
+        &:has(input:checked) {
+            @apply hidden;
         }
-        &:nth-child(2) {
-            transform: translate(33.3%, 0) scale(.333);
-        }
-        &:nth-child(3) {
-            transform: translate(66.6%, 0) scale(.333);
-        }
-        &:nth-child(4) {
-            transform: translate(0, 33.3%) scale(.333);
-        }
-        &:nth-child(5) {
-            transform: translate(33.3%, 33.3%) scale(.333);
-        }
-        &:nth-child(6) {
-            transform: translate(66.6%, 33.3%) scale(.333);
-        }
-        &:nth-child(7) {
-            transform: translate(0, 66.6%) scale(.333);
-        }
-        &:nth-child(8) {
-            transform: translate(33.3%, 66.6%) scale(.333);
-        }
-        &:nth-child(9) {
-            transform: translate(66.6%, 66.6%) scale(.333);
+
+        & div {
+            @apply absolute top-4 right-4 block bg-white rounded-full opacity-50 text-2xl/6 p-1;
+
+            &:hover {
+                @apply opacity-100;
+            }
         }
     }
 }
 
 .call-to-action {
-    @apply bg-gray-950 sawed m-2 flex gap-1 md:gap-2 outline-gray-950 text-white p-2 px-2 md:px-6 transition-transform hover:-translate-y-0.5 active:translate-y-0;
+    @apply bg-primary sawed m-2 flex gap-1 md:gap-2 outline-primary text-white p-2 px-2 md:px-6 transition-transform hover:-translate-y-0.5 active:translate-y-0;
 }

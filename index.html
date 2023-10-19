@@ -6,16 +6,16 @@
     <title>Diamant'inn</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="output.css">
-    <link rel="icon" href="media/logo.png">
+    <link rel="icon" href="media/logo.svg">
     <meta name="description" content="Superbe haut de villa avec grande piscine en Martinique.">
     <meta property="og:url" content="https://diamant-inn.fr">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Diamant'inn">
     <meta property="og:description" content="Superbe haut de villa avec grande piscine en Martinique.">
-    <meta property="og:image" content="https://www.diamant-inn.fr/media/logo.png">
+    <meta property="og:image" content="https://www.diamant-inn.fr/media/logo.svg">
 </head>
 <body class="bg-gray-50 overflow-x-hidden">
-    <nav class="fixed w-full top-0 z-50 bg-gray-950 transition text-white max-lg:[&:has(input:checked)]:bg-gray-950">
+    <nav class="fixed w-full top-0 z-50 bg-primary transition text-white max-lg:[&:has(input:checked)]:bg-primary">
         <label>
             <input type="checkbox" class="hidden max-lg:[&_~_#nav]:[&:checked]:h-[40vh]">
             <span class="material-symbols-rounded burger float-right text-4xl cursor-pointer mx-2 lg:hidden"></span>
@@ -30,7 +30,7 @@
     </nav>
     <main class="h-screen flex items-center bg-gradient-to-br from-cyan-600 to-teal-800 mb-4 shadow-lg shadow-black/50">
         <div id="splash" class="absolute z-0 bg-full"></div>
-        <h1 class="text-center vibes z-10 bg-gray-950/75 text-white flex-1 p-10 sawed outline-gray-950/75">
+        <h1 class="text-center vibes z-10 bg-primary/75 text-white flex-1 p-10 sawed outline-primary/75">
             <span id="name" class="opacity-0 text-3xl sm:text-5xl md:text-7xl">Diamant'inn</span>
         </h1>
     </main>
@@ -43,7 +43,7 @@
             Située en haut-de-villa, sa grande terrasse accueillante de 30m² domine la végétation environnante, sans vis à vis, et offre une petite vue mer.
             Une piscine, nichée dans la végétation et entourée d'un deck de 90m², vous attend pour des moments de plaisir et de détente.
         </p>
-        <h3 class="vibes text-3xl mt-4 ml-4">Espaces et équipements</h3>
+        <h3 class="vibes text-2xl mt-4">Espaces et équipements</h3>
         <dl class="m-auto max-w-prose">
             <dt class="font-bold py-2">La terrasse panoramique</dt>
             <dd class="text-base pl-6">
@@ -51,7 +51,7 @@
             </dd>
             <dt class="font-bold py-2">La grande piscine</dt>
             <dd class="text-base pl-6">
-                Entourée d'un deck de 90m² vous attend dans le jardin pour un moment de détente au cœur de la verdure, sans vis à vis. Une douche solaire complète l'installation.
+                Entourée d'un deck de 90m² vous attend dans le jardin pour un moment de détente au cœur de la verdure, sans vis à vis. Une douche solaire parachève l'installation.
             </dd>
             <dt class="font-bold py-2">La cuisine</dt>
             <dd class="text-base pl-6">
@@ -60,7 +60,7 @@
             </dd>
             <dt class="font-bold py-2">Les chambres</dt>
             <dd class="text-base pl-6">
-                Avec salle d'eau privative, sont équipées de literies neuves <q class="italic">king-size</q> avec moustiquaire et de climatiseurs efficaces et silencieux. Le canapé-lit confortable du salon complète le couchage.
+                Avec salle d'eau privative, sont équipées de literies neuves <q class="italic">king-size</q> avec moustiquaires et de climatiseurs efficaces et silencieux. Le canapé-lit confortable du salon complète le couchage.
             </dd>
         </dl>
     </section>
@@ -68,57 +68,61 @@
         <h2 class="anchor title">Photos</h2>
         <div class="relative pics aspect-video max-h-[80vh] m-auto">
             <label>
-                <input type="checkbox" class="hidden">
+                <input type="radio" name="pic" class="hidden">
                 <img src="media/terrace.webp" loading="lazy" alt="Terrace"/>
-                <p>Terrace avec vue</p>
+                <p>Terrasse avec vue</p>
             </label>
             <label>
-                <input type="checkbox" class="hidden">
+                <input type="radio" name="pic" class="hidden">
                 <img src="media/pool.webp" loading="lazy" alt="Piscine"/>
                 <p>Piscine rien que pour vous</p>
             </label>
             <label>
-                <input type="checkbox" class="hidden">
+                <input type="radio" name="pic" class="hidden">
                 <img src="media/kitchen.webp" loading="lazy" alt="Cuisine"/>
-                <p>Cuisine tout équipé</p>
+                <p>Cuisine tout équipée</p>
             </label>
             <label>
-                <input type="checkbox" class="hidden">
+                <input type="radio" name="pic" class="hidden">
                 <img src="media/bedroom.webp" loading="lazy" alt="Chambre"/>
-                <p>Chambre parental</p>
+                <p>Chambre parentale</p>
             </label>
             <label>
-                <input type="checkbox" class="hidden">
+                <input type="radio" name="pic" class="hidden">
                 <img src="media/bathroom.webp" loading="lazy" alt="Salle de bain"/>
                 <p>Salle-de-bain privative</p>
             </label>
             <label>
-                <input type="checkbox" class="hidden">
+                <input type="radio" name="pic" class="hidden">
                 <img src="media/bedroom2.webp" loading="lazy" alt="Chambre"/>
                 <p>Seconde chambre</p>
             </label>
             <label>
-                <input type="checkbox" class="hidden">
+                <input type="radio" name="pic" class="hidden">
                 <img src="media/drink.webp" loading="lazy" alt="Ti-punch"/>
-                <p>Ti-punch</p>
+                <p>Ti-punch au salon</p>
             </label>
             <label>
-                <input type="checkbox" class="hidden">
+                <input type="radio" name="pic" class="hidden">
                 <img src="media/beach.webp" loading="lazy" alt="Plage"/>
                 <p>Plage du Diamant</p>
             </label>
             <label>
-                <input type="checkbox" class="hidden">
+                <input type="radio" name="pic" class="hidden">
                 <img src="media/turtle.webp" loading="lazy" alt="Tortue"/>
                 <p>Tortue aux Anses d'Arlet</p>
+            </label>
+            <label class="close">
+                <input type="radio" name="pic" class="hidden" checked>
+                <div class="material-symbols-rounded">close</div>
             </label>
         </div>
     </section>
     <section>
-        <h2 class="anchor title">Oû nous trouver</h2>
+        <h2 class="anchor title">Où nous trouver</h2>
         <p class="m-auto max-w-prose">
             Diamant'Inn est idéalement située.
-            À 3km de part et d'autre, se trouvent de magnifiques plages qui vous accueilleront en fonction de vos goûts et envie.
+            À 3km de part et d'autre, se trouvent de magnifiques plages qui vous accueilleront en fonction de vos goûts et envies.
         </p>
         <dl class="m-auto max-w-prose">
             <dt class="font-bold py-2">La grande plage ombragée du Diamant</dt>
@@ -139,7 +143,7 @@
                 <span class="material-symbols-rounded whatsapp">send</span>
                 Par What'sApp
             </a>
-            <a class="call-to-action" href="mailto:catherine.martigny@gmail.com" target="_blank">
+            <a class="call-to-action" href="mailto:catherine.martigny@gmail.com">
                 <span class="material-symbols-rounded email">mail</span>
                 Par E-mail
             </a>

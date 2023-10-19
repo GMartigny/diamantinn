@@ -17,10 +17,15 @@ window.addEventListener("load", async () => {
 });
 
 const splashPics = [
-    "pool",
     "terrace",
-    "bed",
+    "pool",
+    "kitchen",
+    "bedroom",
+    "bathroom",
+    "bedroom2",
     "drink",
+    "beach",
+    "turtle",
 ];
 
 const container = document.getElementById("splash");
@@ -85,7 +90,7 @@ document.querySelectorAll(".anchor")
             .replace(/[ -]/g, "_")
             .replace(/\W/g, "");
         const li = document.createElement("li");
-        li.className = "flex grow hover:bg-gray-950";
+        li.className = "flex grow hover:bg-primary";
         const a = document.createElement("a");
         a.addEventListener("click", () => {
             history.replaceState({}, "", `#${anchor.id}`);
