@@ -46,13 +46,9 @@ body {
 section {
     @apply p-4 container mx-auto;
 
-    &:not(&:last-of-type) {
-        @apply min-h-[60vh];
-    }
-
     &:after {
         content: "";
-        @apply block h-4 bg-divider bg-center bg-no-repeat mt-8;
+        @apply block h-4 bg-divider bg-center bg-no-repeat mt-12;
     }
 
     .title {
@@ -100,8 +96,9 @@ section {
 
         & i {
             @apply sawed w-full bottom-8 opacity-0 transition-opacity text-center text-white p-4 bg-primary/75 outline-primary/75;
-            @apply absolute;
-            @apply max-md:p-1 max-md:bottom-2;
+            @apply !absolute;
+            @apply max-lg:bottom-4 max-lg:p-2;
+            @apply max-md:outline-0 max-md:border-0 max-md:bottom-0 max-md:left-0 max-md:w-full max-md:p-1;
         }
 
         &.close {
