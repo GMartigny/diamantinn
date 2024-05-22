@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Great+Vibes&display=swap');
 
 @tailwind base;
 @tailwind utilities;
@@ -19,6 +19,7 @@ nav:has(input:checked) .burger:after {
 }
 
 body {
+    font-family: "Dosis", sans-serif;
     overflow: hidden;
 
     &.loaded {
@@ -65,7 +66,7 @@ section {
     margin: 0 var(--offset);
 
     label {
-        @apply absolute w-full h-full left-0 top-0 cursor-pointer will-change-transform transition-transform duration-300 motion-reduce:duration-0 z-0 hover:z-10 hover:transition-transform origin-top-left;
+        @apply absolute w-full h-full left-0 top-0 cursor-pointer will-change-transform duration-300 motion-reduce:duration-0 z-0 hover:z-10 hover:transition-transform;
         transform: scale(.5) translate(calc(-50% - var(--offset) * 2), 0);
         transition: transform ease .3s, z-index linear 0s .2s;
         transform-origin: center;
