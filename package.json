@@ -1,6 +1,6 @@
 {
   "name": "diamantinn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Diamant'inn website",
   "type": "module",
   "source": "src/index.html",
