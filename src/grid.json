@@ -1,0 +1,47 @@
+[
+  {
+    "img": "1-terrace",
+    "alt": "Terrace",
+    "desc": "Terrasse avec vue"
+  },
+  {
+    "img": "2-pool",
+    "alt": "Piscine",
+    "desc": "Piscine rien que pour vous"
+  },
+  {
+    "img": "3-kitchen",
+    "alt": "Cuisine",
+    "desc": "Cuisine tout équipée"
+  },
+  {
+    "img": "4-bedroom",
+    "alt": "Chambre",
+    "desc": "Chambre parentale"
+  },
+  {
+    "img": "5-bathroom",
+    "alt": "Salle de bain",
+    "desc": "Salle-de-bain privative"
+  },
+  {
+    "img": "6-bedroom2",
+    "alt": "Chambre",
+    "desc": "Seconde chambre"
+  },
+  {
+    "img": "7-drink",
+    "alt": "Ti-punch",
+    "desc": "Ti-punch au salon"
+  },
+  {
+    "img": "8-beach",
+    "alt": "Plage",
+    "desc": "Plage du Diamant"
+  },
+  {
+    "img": "9-turtle",
+    "alt": "Tortue",
+    "desc": "Tortue aux Anses d'Arlet"
+  }
+]

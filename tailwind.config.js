@@ -1,5 +1,5 @@
 export default {
-  content: ["index.html", "script.js"],
+  content: ["src/index.html", "src/script.js"],
   theme: {
     extend: {
       colors: {
@@ -13,7 +13,7 @@ export default {
         appear: "appear 1 forwards 1s"
       },
       backgroundImage: {
-        divider: "url(./media/divider.svg)",
+        divider: "red",
       },
       keyframes: {
         appear: {
