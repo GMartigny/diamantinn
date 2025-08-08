@@ -23,7 +23,7 @@ window.addEventListener("load", async () => {
 
 const container = document.getElementById("splash");
 const fader = render("div", {
-    className: "bg-full transition-opacity duration-1000 opacity-0",
+    class: "bg-full transition-opacity duration-1000 opacity-0",
 });
 container.appendChild(fader);
 const fadeDuration = 1000;
